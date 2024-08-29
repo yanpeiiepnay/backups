@@ -1,0 +1,4 @@
+
+git add KeePassDatabase.kdbx.txt
+git commit -am "更新KeePassDatabase.kdbx" #提交变更
+git push #上传到远程
