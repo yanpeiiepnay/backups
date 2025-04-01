@@ -1,7 +1,7 @@
 git remote set-url origin git@github.com:yanpeiiepnay/backups.git #更换远程仓库为github
 git remote set-url origin git@gitee.com:yanpeiiepnay/backups.git #更换远程仓库为gitee
 
-
+cd /storage/emulated/0/..0/git/backups/
 git add KeePassDatabase.kdbx.txt
 git commit -am "更新KeePassDatabase.kdbx" #提交变更
 git push #上传到远程
