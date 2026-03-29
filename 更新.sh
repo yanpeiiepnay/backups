@@ -3,16 +3,16 @@ git add README.md
 git add KeePassDatabase.kdbx.txt    
 git add 更新.sh
 git commit -m "hello"
-git push gitee master
-git push github master
+git push gitee main
+git push github main
 
 
 
 
 : <<'EOF'
-#这是一段多行注释
-#安装git
-pkg install git
+#初始化
+pkg install git #安装git
+
 #设置邮箱用户名
 git config --global user.email "yanpeiiepnay@gmail.com"
 git config --global user.name "yanpeiiepnay"
@@ -32,7 +32,7 @@ git clone git@github.com:yanpeiiepnay/backups.git
 cd backups.git
 git config --global --add safe.directory /storage/emulated/0/..0/git/backups
 
-git branch #查看本地分支，当前分支前有*，此例为master
+git branch #查看本地分支，当前分支前有*，此例为main
 
 git remote #查看远程仓库别名，一般为orgin
 git remote rename origin github #修改远程仓库别名为github
@@ -44,7 +44,20 @@ git add KeePassDatabase.kdbx.txt
 git add 更新.sh
 git commit -m "hello"
 
-git push gitee master
-git push github master
+git push gitee main
+git push github main
 EOF
 
+: <<'EOF'
+#删除所有历史
+git checkout --orphan new_main #创建孤儿分支
+git add -A #暂存所有文件
+git commit -m "Initial commit" #创建新的初始提交
+
+git branch -D main #删除旧的主分支
+#git push gitee --delete main 删除远程仓库的分支，这个不用，且只有一个分支时删不了
+
+git branch -m main #重命名新分支
+git push -f gitee main #强制推送到远程
+git push -f github main #强制推送到远程
+EOF
