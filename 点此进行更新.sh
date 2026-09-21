@@ -1,3 +1,7 @@
+#一加手机保存无法选文件名，保存为1更快
+mv -f 1 KeePassDatabase.kdbx.txt
+
+
 cd /storage/emulated/0/..0/git/backups/
 git add README.md
 git add KeePassDatabase.kdbx.txt    
